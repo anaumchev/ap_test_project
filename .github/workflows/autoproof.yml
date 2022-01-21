@@ -46,6 +46,9 @@ jobs:
           source /home/runner/.bashrc;
           source /home/runner/.profile;
           env
+        env:
+          ISE_EIFFEL: /usr/local/Eiffel_21.11
+          ISE_PLATFORM: linux-x86-64
 
       - name: Install z3
         run:
