@@ -30,18 +30,18 @@ jobs:
         id: cache-ap
         uses: actions/cache@v2
         with:
-          path: $GITHUB_WORKSPACE/autoproof.tar.gz;
+          path: $GITHUB_WORKSPACE/usr/local/Eiffel_21.11;
           key: ${{ runner.os }}-ap
 
       - name: Download AutoProof distribution
         if: steps.cache-ap.outputs.cache-hit != 'true'
         run:
           wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz;
-
-      - name: Unpack AutoProof distribution
-        run:
           tar xvf autoproof.tar.gz;
-          sudo mv usr/local/Eiffel_21.11 /usr/local/;          
+          
+      - name: Move AutoProof distribution
+        run:
+          sudo mv usr/local/Eiffel_21.11 /usr/local/         
 
       - name: Install z3
         run:
