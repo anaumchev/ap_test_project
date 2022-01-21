@@ -32,23 +32,6 @@ jobs:
           tar xvf autoproof.tar.gz;
           sudo mv usr/local/Eiffel_21.11 /usr/local;
 
-
-      - name: Update .bashrc
-        run:
-          echo 'export PATH=$PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin' >> /home/runner/.bashrc;
-          cat /home/runner/.bashrc;
-          source /home/runner/.bashrc;
-          
-      - name: Print evn
-        run:
-          source /home/runner/.bashrc;
-          source /home/runner/.profile;
-          env
-        env:
-          ISE_EIFFEL: /usr/local/Eiffel_21.11
-          ISE_PLATFORM: linux-x86-64
-          #PATH: "$PATH" #:/usr/local/Eiffel_21.11/studio/spec/linux-x86-64/bin'
-
       - name: Install z3
         run:
           sudo apt-get install -y z3
@@ -63,12 +46,9 @@ jobs:
         env:
           ISE_EIFFEL: /usr/local/Eiffel_21.11
           ISE_PLATFORM: linux-x86-64
+
           
-#          ISE_EIFFEL: /home/runner/Eiffel_21.11
-#          ISE_PLATFORM: linux-x86-64
-#          PATH: $PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin
-          
-#      - name: Run boogie
-#        run:
-#          ./usr/local/Eiffel_21.11/studio/tools/boogie/boogie autoproof0.bpl 
+      - name: Run boogie
+        run:
+          $ISE_EIFFEL/studio/tools/boogie/boogie EIFGENs/ap_project/Proofs/autoproof0.bpl 
 
