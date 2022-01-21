@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ghcr.io/z3prover/z3:ubuntu-20.04-bare-z3-sha-1b5f7cd
+    runs-on: ubuntu-20.04-bare-z3-edge
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
