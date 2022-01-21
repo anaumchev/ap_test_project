@@ -38,10 +38,7 @@ jobs:
         run:
           wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz;
           tar xvf autoproof.tar.gz;
-          
-      - name: Move AutoProof distribution
-        run:
-          sudo mv $GITHUB_WORKSPACE/usr/local/Eiffel_21.11 /usr/local/         
+          sudo cp -rp $GITHUB_WORKSPACE/usr/local/Eiffel_21.11 /usr/local/        
 
       - name: Install z3
         run:
