@@ -61,8 +61,11 @@ jobs:
           uname -p
 
       - name: Run AutoProof
-        run:      
-          /home/runner/Eiffel_21.11/studio/spec/$ISE_PLATFORM/bin/ec_ap -verify CLOCK -config ap_project.ecf
+        run:
+          echo $ISE_EIFFEL
+          echo $ISE_PLATFORM
+          echo $PATH
+          /home/runner/Eiffel_21.11/studio/spec/$ISE_PLATFORM/bin/ec_ap -config ap_project.ecf
         env:
           ISE_EIFFEL: /home/runner/Eiffel_21.11
           ISE_PLATFORM: linux-x86-64
