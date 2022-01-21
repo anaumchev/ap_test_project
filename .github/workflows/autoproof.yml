@@ -38,7 +38,7 @@ jobs:
         run: |
           wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz
           tar xvf autoproof.tar.gz
-          mv usr/local/Eiffel_21.11 ~/
+          mv usr/local/Eiffel_21.11 /home/runner
 
       #- name: Run AutoProof
       #  run: |
@@ -62,9 +62,9 @@ jobs:
 
       - name: Run AutoProof
         run:      
-          ~/Eiffel_21.11/studio/spec/$ISE_PLATFORM/bin/ec_ap -verify CLOCK -config ap_project.ecf
+          /home/runner/Eiffel_21.11/studio/spec/$ISE_PLATFORM/bin/ec_ap -verify CLOCK -config ap_project.ecf
         env:
-          ISE_EIFFEL: ${{ github.home }}/Eiffel_21.11
+          ISE_EIFFEL: /home/runner/Eiffel_21.11
           ISE_PLATFORM: linux-x86-64
           PATH: $PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin
           
