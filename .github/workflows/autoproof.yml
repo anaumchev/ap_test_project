@@ -25,8 +25,16 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a set of commands using the runners shell
+
+      - name: Cache AP
+        id: cache-ap
+        uses: actions/cache@v2
+        with:
+          path: /usr/local/Eiffel_21.11
+          key: ${{ runner.os }}-ap
+
       - name: Download AutoProof distribution
+        if: steps.cache-ap.outputs.cache-hit != 'true'
         run:
           wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz;
           tar xvf autoproof.tar.gz;
