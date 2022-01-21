@@ -42,7 +42,7 @@ jobs:
       - name: Copy AutoProof distribution
         if: steps.cache-ap.outputs.cache-hit == 'true'
         run:        
-          sudo cp -rp $GITHUB_WORKSPACE/Eiffel_21.11 /usr/local/        
+          ls -la        
 
       - name: Install z3
         run:
