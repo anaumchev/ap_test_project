@@ -38,6 +38,7 @@ jobs:
           echo "export ISE_EIFFEL=/usr/local/Eiffel_21.11" >> /home/runner/.bashrc;
           echo "export ISE_PLATFORM=linux-x86-64" >> /home/runner/.bashrc;
           echo 'export PATH=$PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin' >> /home/runner/.bashrc;
+          cat /home/runner/.bashrc;
           source /home/runner/.bashrc;
           
       - name: Print evn
