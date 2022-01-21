@@ -38,6 +38,10 @@ jobs:
         run:
           wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz;
           tar xvf autoproof.tar.gz;
+          
+      - name: Copy AutoProof distribution
+        if: steps.cache-ap.outputs.cache-hit == 'true'
+        run:        
           sudo cp -rp $GITHUB_WORKSPACE/usr/local/Eiffel_21.11 /usr/local/        
 
       - name: Install z3
