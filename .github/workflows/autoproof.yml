@@ -28,17 +28,17 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Download AutoProof distribution
         run:
-          wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz
-          tar xvf autoproof.tar.gz
-          sudo mv usr/local/Eiffel_21.11 /usr/local
+          wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz;
+          tar xvf autoproof.tar.gz;
+          sudo mv usr/local/Eiffel_21.11 /usr/local;
 
 
       - name: Update .bashrc
         run:
-          echo "export ISE_EIFFEL=/usr/local/Eiffel_21.11" >> /home/runner/.bashrc
-          echo "export ISE_PLATFORM=linux-x86-64" >> /home/runner/.bashrc
-          echo 'export PATH=$PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin' >> /home/runner/.bashrc
-          source /home/runner/.bashrc
+          echo "export ISE_EIFFEL=/usr/local/Eiffel_21.11" >> /home/runner/.bashrc;
+          echo "export ISE_PLATFORM=linux-x86-64" >> /home/runner/.bashrc;
+          echo 'export PATH=$PATH:$ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin' >> /home/runner/.bashrc;
+          source /home/runner/.bashrc;
           
       - name: Print evn
         run:
