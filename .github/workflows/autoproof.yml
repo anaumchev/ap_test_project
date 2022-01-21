@@ -62,9 +62,6 @@ jobs:
 
       - name: Run AutoProof
         run:
-          echo $ISE_EIFFEL;
-          echo $ISE_PLATFORM;
-          echo $PATH;
           $ISE_EIFFEL/studio/spec/$ISE_PLATFORM/bin/ec_ap -config ap_project.ecf;
         env:
           ISE_EIFFEL: /home/runner/Eiffel_21.11
