@@ -17,7 +17,7 @@
 		<capability>
 			<concurrency support="none"/>
 		</capability>
-		<library name="base" location="$AP/library/base/base-safe-scoop.ecf">
+		<library name="base" location="${ISE_EIFFEL}/studio/tools/autoproof/library/base/base-safe-scoop.ecf">
 			<option warning="none">
 			</option>
 		</library>
