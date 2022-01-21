@@ -43,6 +43,7 @@ jobs:
           
       - name: Print evn
         run:
+          source /home/runner/.bashrc;
           env
 
       - name: Install z3
