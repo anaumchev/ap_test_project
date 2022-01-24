@@ -38,7 +38,7 @@ jobs:
         run:
           wget https://www.dropbox.com/s/1kibfwteo0fb96q/autoproof.tar.gz;
           tar xvf autoproof.tar.gz;
-          sudo mv $GITHUB_WORKSPACE/usr/local/Eiffel_* /usr/local/Eiffel
+          sudo mv $GITHUB_WORKSPACE/Eiffel_* /usr/local/Eiffel
           
 
       - name: Install z3
